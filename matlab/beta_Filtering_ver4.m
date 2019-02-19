@@ -2,7 +2,7 @@
 % Automate registration%
     %ThingSpeak? Automate Students.csv?%
 % Fix TimeZone to function through daylight savings time
-% Read Channel ID and API key from text file
+% Read Channel ID and API key from text file | maybe not
 % Read data from q/a
 % Find bugs
 %% Variables %%
@@ -83,9 +83,15 @@ Tout = T(:, {'lastName', 'firstName', 'Present', 'Date'});
 % Can be outputted to a text (.txt, .dat, .csv) file or 
 % Excel (xls,.xlsm,.xlsx) file
 writetable(Tout, 'out.xlsx');
-% RUN THIS COMMAND IF YOU ARE ON A WINDOWS COMPUTER
-% This command opens the excel spreadsheet written in line 78
-%winopen('out.xlsx');
+%%opens the spreadsheet depending on system
+if ismac
+    system('open out.xlsx');
+elseif ispc
+    winopen('out.xlsx');
+elseif isunix
+    unix('out.xlsx');
+end
+
 
 %% INFORMATION %%
 % Compiled on Matlab 2018b

@@ -4,14 +4,14 @@
 % Fix TimeZone to function through daylight savings time
 %% Variables %%
 %Input the Channel ID for your ThingSpeak Server
-readChannelID = 352563;
+readChannelID = 699369;
 % Enter your Read API key (' ')
-readAPIKey = 'IV6EC6SOZP8F818R';
+readAPIKey = '4LTO5DS0KFCMAWEG';
 
 %Input the Channel ID for your ThingSpeak Server
-writeChannelID = 352563;
+writeChannelID = 699369;
 % Enter your Write API key (' ')
-writeAPIKey = 'ZGUH9PMYN82B6TY4';
+writeAPIKey = '8BZUUR7S8I924EN5';
 %% Read Data %%
 % Pulls data from ThingSpeak API. NumPoints is changeable. Timetable
 %can typically be used. Threw excpetions here. Table is changed to a timetable. 
@@ -64,7 +64,7 @@ for i = 1:length(filteredData.rfid)
         epc = filteredData.rfid{i};      
         T({epc}, :).Present = 1;
     catch ME
-        fileID = fopen('log.txt'); %%opens log file for errors%%
+        fileID = fopen('log.rtf', 'w'); %%opens log file for errors%%
         error = warning(ME.identifier, '%s', ME.message);  %catches exceptions%
         fprintf(fileID, error); %%prints to log file%%
         fclose(fileID); %%closes log%%

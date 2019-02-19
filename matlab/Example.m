@@ -1,11 +1,11 @@
-readChannelID = [351435];
+readChannelID = 699369;
 % TODO - Enter the Read API Key between the '' below:
-readAPIKey = 'FL3XZIDD8M8D19KR';
+readAPIKey = '4LTO5DS0KFCMAWEG';
 
 % TODO - Replace the [] with channel ID to write data to:
-writeChannelID = [];
+writeChannelID = 699369;
 % TODO - Enter the Write API Key between the '' below:
-writeAPIKey = '';
+writeAPIKey = '8BZUUR7S8I924EN5';
 
 %% Read Data %%
 data = thingSpeakRead(readChannelID, 'ReadKey', readAPIKey, 'Fields',1,'NumPoints',100,'outputFormat','timetable');
@@ -41,8 +41,8 @@ T.Date = repmat({datestr(today)}, height(T), 1);
 
 % For every filtered tag ID we've found, mark the student present
 %  This is accomplished by setting the 'Present' field to 1
-for i = 1:length(filteredData.TagEPC)
-    epc = filteredData.TagEPC{i};
+for i = 1:length(filteredData.rfid)
+    epc = filteredData.rfid{i};
     T({epc}, :).Present = 1;
 end
 
