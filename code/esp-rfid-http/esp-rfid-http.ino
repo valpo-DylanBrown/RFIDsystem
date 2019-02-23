@@ -115,7 +115,7 @@ void loop()
 
 
   const char* host = "api.thingspeak.com";
-  const char* streamID = "ZGUH9PMYN82B6TY4";
+  const char* streamID = "8BZUUR7S8I924EN5";
   // Example: GET https://api.thingspeak.com/update?api_key=8X26QMKV55Q1LTDK&field1=
 
   String url = "http://";
@@ -214,6 +214,3 @@ void RFIDInit(bool debug) {
   nano.setReadPower(500); //5.00 dBm. Higher values may cause USB port to brown out
               //Max Read TX Power is 27.00 dBm and may cause temperature-limit throttling
 }
-
-
-

@@ -93,7 +93,7 @@ warning( 'off', 'MATLAB:xlswrite:AddSheet' ) ;
 if ismac
     system('open out.xlsx');
 elseif ispc
-    winopen('out.xlsx');
+   winopen('out.xlsx');
 elseif isunix
     unix('out.xlsx');
 end
