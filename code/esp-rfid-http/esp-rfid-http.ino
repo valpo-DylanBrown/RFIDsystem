@@ -12,7 +12,7 @@
 //#include "include/RFID_Config.h" //old doesnt work
 
 #include <elapsedMillis.h> //https://playground.arduino.cc/Code/ElapsedMillis
-uint16_t interval = 15000;// Ensure the ESP shield 5V pin is NOT connected to the RFID shield.
+uint16_t interval = 2000;// Ensure the ESP shield 5V pin is NOT connected to the RFID shield.
 #define RFID_DEBUGGING 0
 //   Clip off the pin is an easy but "permanent" solution.
 //   This should already have been done.
@@ -115,7 +115,7 @@ void loop()
 
 
   const char* host = "api.thingspeak.com";
-  const char* streamID = "8BZUUR7S8I924EN5";
+  const char* streamID = "4RS2DMH6YGBDXDHL";
   // Example: GET https://api.thingspeak.com/update?api_key=8X26QMKV55Q1LTDK&field1=
 
   String url = "http://";
@@ -149,7 +149,7 @@ void loop()
 
   responseType = 0; //Reset responseType
   elapsedMillis timeElapsed;
-  while (timeElapsed < interval) { //While time elapsed is less than 15 seconds
+  while (timeElapsed < interval) { //While time elapsed is less than 2 seconds
     responseType = nano.readTagEPC(myEPC, myEPClength, 500); //Scan for a new tag up to 500ms
     if (responseType == RESPONSE_SUCCESS) {
       
@@ -162,7 +162,7 @@ void loop()
       tone(BUZZER1, 622, 150); //D#
      
       Serial.println(F("Data did not go through!"));
-      Serial.println(F("Please wait 15 seconds between scans."));
+      Serial.println(F("Please wait 2 seconds between scans."));
 
       delay(500); //Give the user time to pull their tag away before scanning
       
