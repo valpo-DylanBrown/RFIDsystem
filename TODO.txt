@@ -1,8 +1,9 @@
 TODO:
-	1. Show when a person is late
+	--1. Show when a person is late
+Having two classes
 	2. 3d print housing unit
 	3. Figure out external power
 	4. Play with read power
-	5. Add time column
-	6. Create script
-	7. Make a case statement for HTTP Response codes. OR USE MQTT	
+	--5. Add time column
+	--6. Create script
+	--7. Make a case statement for HTTP Response codes. OR USE MQTT	
